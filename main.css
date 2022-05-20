@@ -1,4 +1,11 @@
 html {
   font-family: basic-sans, sans-serif;
+  text-align: center;
+}
+
+body {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
 }
 /*# sourceMappingURL=main.css.map */
