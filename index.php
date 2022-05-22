@@ -22,7 +22,18 @@
     <div class="mainpanel">
         <form method="post" action="index.php">
             <div class="formy">
-                <div id="form"><p>Search: </p><input type="text" name="search"></div>
+                <div id="form">
+                    <p>Search: </p><input type="text" name="search">
+                    <p>Search by:</p>
+                    <select name="searchby" id="searchby">
+                        <option value="pls" selected>...</option>
+                        <option value="name" selected>Name</option>
+                        <option value="email">Email</option>
+                        <option value="phonenum">Phone Number</option>
+                        <option value="dept">Department</option>
+                        <option value="expertise">Expertise</option>
+                    </select>
+                </div>
             </div>
             <br><br>
             <input type="submit" name="Submit" value="Submit">
@@ -30,9 +41,39 @@
         <?php
             if(isset($_POST["Submit"])) {
                 $search_query = $_POST['search'];
+                $search_by = $_POST['searchby'];
 
-                $query = "select * from staff where name like '$search_query'";
+                $query = "select * from staff where $search_by like '%$search_query%'";
                 $query_run = mysqli_query($con,$query);
+                while ($row2=mysqli_fetch_array($query_run)) {
+                    $a=$row2['name'];
+                    $b=$row2['email'];
+                    $c=$row2['phonenum'];
+                    $d=$row2['dept'];
+                    $e=$row2['expertise'];
+                    $f=$row2['imgurl'];
+                ?>
+    </div>
+    <div class="results">
+            <table style="border: 2px solid black;">
+            <tr>
+                <th>Name</th>
+                <th>Email Address</th>
+                <th>Phone</th>
+                <th>Department</th>
+                <th>Expertise</th>
+                <th>Image</th>
+            </tr>
+            <tr>
+                <td><?php echo $a; ?></td>
+                <td><?php echo $b; ?></td>
+                <td><?php echo $c; ?></td>
+                <td><?php echo $d; ?></td>
+                <td><?php echo $e; ?></td>
+                <td><?php echo '<img src='.$f.'>'; ?></td>
+            </tr>
+            </table>
+            <?php }
             }
         ?>
     </div>
