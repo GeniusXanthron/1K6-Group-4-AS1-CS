@@ -20,17 +20,17 @@
         <h2>Directory: Insert</h2>
     </div>
     <div class="mainpanel">
-        <form action="insert.php">
-            <div class="formy">
+        <form method="post" action="insert.php">
+            <div class="formy" method="post">
                 <div id="formname"><p>Name: </p><input type="text" name="name"></div>
                 <div id="formphno"><p>Phone Number: </p><input type="text" name="phno"></div>
                 <div id="formdept"><p>Department: </p><input type="text" name="dept"></div>
             </div>
             <br><br>
-            <input type="submit" name="submeet" value="Enter">
+            <input type="submit" name="Submit" value="Submit">
         </form>
         <?php
-            if(isset($_POST["submeet"])) {
+            if(isset($_POST["Submit"])) {
                 $name = $_POST['name'];
                 $phone = $_POST['phno'];
                 $dept = $_POST['dept'];

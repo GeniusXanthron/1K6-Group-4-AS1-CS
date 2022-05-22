@@ -25,10 +25,10 @@
                 <div id="form"><p>Search: </p><input type="text" name="search"></div>
             </div>
             <br><br>
-            <input type="submit" name="submeet" value="Enter">
+            <input type="submit" name="Submit" value="Submit">
         </form>
         <?php
-            if(isset($_POST["submeet"])) {
+            if(isset($_POST["Submit"])) {
                 $search_query = $_POST['search'];
 
                 $query = "select * from staff where name like '$search_query'";
