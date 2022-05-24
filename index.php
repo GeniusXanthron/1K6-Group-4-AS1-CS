@@ -38,7 +38,18 @@
             <br><br>
             <input type="submit" name="Submit" value="Submit">
         </form>
-        <?php
+    </div>
+        <div class="results">
+            <table style="border: 2px solid black;" border>
+            <tr>
+                <th>Name</th>
+                <th>Email Address</th>
+                <th>Phone</th>
+                <th>Department</th>
+                <th>Expertise</th>
+                <th>Image</th>
+            </tr>
+            <?php
             if(isset($_POST["Submit"])) {
                 $search_query = $_POST['search'];
                 $search_by = $_POST['searchby'];
@@ -52,18 +63,7 @@
                     $d=$row2['dept'];
                     $e=$row2['expertise'];
                     $f=$row2['imgurl'];
-                ?>
-    </div>
-    <div class="results">
-            <table style="border: 2px solid black;">
-            <tr>
-                <th>Name</th>
-                <th>Email Address</th>
-                <th>Phone</th>
-                <th>Department</th>
-                <th>Expertise</th>
-                <th>Image</th>
-            </tr>
+            ?>
             <tr>
                 <td><?php echo $a; ?></td>
                 <td><?php echo $b; ?></td>
@@ -73,9 +73,9 @@
                 <td><?php echo '<img src='.$f.'>'; ?></td>
             </tr>
             </table>
+        </div>
             <?php }
             }
         ?>
-    </div>
 </body>
 </html>
