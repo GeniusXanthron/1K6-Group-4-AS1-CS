@@ -66,9 +66,43 @@ body {
   font-weight: bold;
 }
 
+input[name=Submit]{
+  border: 0;
+  border-radius: 5px;
+  background-color: #faf0d7;
+  height: 23px;
+}
+
 @media screen and (max-height: 719px) {
   .topbar img {
     display: none;
   }
 }
+
+.box{
+  width: 60%;
+  text-align: left;
+  box-shadow: rgba(131, 131, 131, 0.532) 0 0 10px;
+            border-radius: 15px;
+            width: 90%;
+            display: inline-block;
+}
+.img{
+  display: inline-block;
+  float: left;
+  padding-top: 40px;
+  padding-left: 60px;
+  padding-bottom: 40px;
+  width: 20%;
+}
+.img img{
+  width: 100%;
+}
+.text{
+  display: inline-block;
+  width: 50%;
+  text-align: left;
+  padding: 40px;
+}
+
 /*# sourceMappingURL=home.css.map */
