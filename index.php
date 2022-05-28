@@ -1,9 +1,6 @@
 <?php 
     $con=mysqli_connect("localhost","root","");
-    mysqli_select_db($con,"kgpndir");
-    // Am: kgpndir
-    // Coral: search
-    // Al: search
+    mysqli_select_db($con,"search");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +26,6 @@
                     <p>Search by:</p>
                     <select name="searchby" id="searchby">
                         <option value="Search by..." selected>Search by...</option>
-                        <option value="all">All Lecturers</option>
                         <option value="name">Name</option>
                         <option value="email">Email</option>
                         <option value="phonenum">Phone Number</option>
@@ -48,41 +44,35 @@
             if(isset($_POST["Submit"])){
 				$search_query = $_POST['search'];
                 $search_by = $_POST['searchby'];
-				if($search_by=="Search by...") {
-				    echo "<script type=text/javascript>alert ('Please select a search type!')</script>";
-                    die();
+				if($search_by=="Search by...")
+				{
+				echo "<script type=text/javascript>alert ('Please select a search type!')</script>";
 				}
-                elseif($search_by!="all" AND $search_query=="") {
-                    echo "<script type=text/javascript>alert ('Please put your keywords in the box!')</script>";
-                    die();
-                }
-                elseif($search_by="all") {
-				$query = "select * from lecturers group by Rank";
-				}
-				else {
+				else{
                 $query = "select * from lecturers where $search_by like '%$search_query%'";
-                }
                 $query_run = mysqli_query($con,$query);
                 while ($row2=mysqli_fetch_array($query_run))
 				{
                     $a=$row2['Name'];
                     $b=$row2['Email'];
                     $c=$row2['Phone'];
-                    $d=$row2['Department']; 
+                    $d=$row2['Department'];
                     $e=$row2['Expertise'];
                     $f=$row2['Image'];
                 ?>
             <div class="box">
 				<div class="img"><img src="<?php echo $f;?>"></div>
 				<div class="text">
-					<div class="resname"><p><?php echo $a?></p></div>
-                    <div class="resemail"><p>Email: <?php echo $b?></p></div>
-                    <div class="resphone"><p>Phone No.: <?php echo $c?></p></div>
-                    <div class="resdept"><p>Department:<br><?php echo $d?></p></div>
-					<div class="resexpert"><p><?php if($e!=" "){echo "Expertise: <br>";} echo $e?></p></div>
+					<?php echo $a?><br>
+					<?php echo $b?><br>
+					<?php echo $c?><br>
+					<?php echo $d?>
+					<?php if($e!=" "){echo "<br><br>Expertise: <br>";} echo $e?><br>
 				</div>
 			</div>
+			<br><br>
 				<?php }
+				}
 			}
         ?>
 
