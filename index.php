@@ -33,7 +33,7 @@
                         <option value="expertise">Expertise</option>
                     </select>
 					<p>Search: </p><input type="text" name="search">
-					<input type="submit" name="Submit" value="Search">
+					<input type="submit" name="Submit" value="Search" id="submit">
                 </div>
             </div>
         </form>
@@ -63,9 +63,9 @@
             <div class="box">
 				<div class="img"><img src="<?php echo $f;?>"></div>
 				<div class="text">
-					<?php echo $a?><br>
-					<?php echo $b?><br>
-					<?php echo $c?><br>
+					<p id="lecname"><?php echo $a?><br></p>
+					<p id="lecemail"><?php echo $b?><br></p>
+					<p id="lecphone"><?php echo $c?><br></p>
 					<?php echo $d?>
 					<?php if($e!=" "){echo "<br><br>Expertise: <br>";} echo $e?><br>
 				</div>

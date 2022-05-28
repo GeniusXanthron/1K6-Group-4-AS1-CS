@@ -51,7 +51,8 @@ body {
   background: #758ddb79;
   border: 0;
   border-radius: 15px;
-  margin: 8px;
+  margin: 16px;
+  margin-bottom: 24px;
   padding: 16px;
   color: white;
 }
@@ -81,10 +82,10 @@ select:focus{
   box-shadow: rgba(19, 38, 84, 0.767) 0 0 7px;
 }
 
-input[name=Submit]{
+#submit {
+  background-color: #649df2;
   border: 0;
   border-radius: 5px;
-  background-color: #f5e6bf;
   height: 25px;
   cursor: pointer;
 }
@@ -121,30 +122,43 @@ input[name=search]:focus{
 }
 
 .box{
-  width: 60%;
+  max-width: 80%;
+  max-height: 50%;
   text-align: left;
   box-shadow: rgba(93, 101, 151, 0.532) 0 0 10px;
-            border-radius: 15px;
-            width: 90%;
-            display: inline-block;
-            color: rgba(255, 255, 255, 0.755);
+  border-radius: 15px;
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.755);
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 .img{
   display: inline-block;
   padding-top: 40px;
   padding-left: 60px;
   padding-bottom: 40px;
-  float: left;
   width: 20%;
 }
 .img img{
   width: 100%;
+  border: 4px solid #495f83;
+  border-radius: 16px;
+  background: #333333;
 }
 .text{
   display: inline-block;
-  width: 50%;
+  width: 35%;
   text-align: left;
   padding: 40px;
 }
 
-/*# sourceMappingURL=home.css.map */
+#lecname {
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  text-decoration: underline;
+}
