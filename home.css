@@ -1,22 +1,3 @@
-html {
-				scrollbar-width: normal;
-				scrollbar-color: #777 #555
-				overflow: visible;
-			}
-
-
-			html::-webkit-scrollbar {
-				width: 15px;
-			}
-
-			html::-webkit-scrollbar-thumb {
-				background: #faf0d7;
-			}
-
-			html::-webkit-scrollbar-track {
-				background: #ffd773;
-			}
-
 body {
   min-width: 98vw;
   min-height: 98vh;
@@ -34,15 +15,15 @@ body {
       -ms-flex-flow: column;
           flex-flow: column;
   text-align: center;
-  background-image: -webkit-gradient(linear, left bottom, right top, from(#fad7c4), color-stop(#fae4cc), to(#faf0d7));
-  background-image: linear-gradient(to right top, #fad7c4, #fae4cc, #faf0d7);
+  /*background-image: linear-gradient(to right top, rgb(215, 215, 215), rgb(237, 237, 237));*/
+  background-color: #1f2347;
 }
 
 .topbar {
-  border: 4px solid #ffd773;
+  border: 4px solid white;
   border-radius: 16px;
-  -webkit-box-shadow: 4px 4px 0 0 #570A57;
-          box-shadow: 4px 4px 0 0 #570A57;
+  -webkit-box-shadow: 4px 4px 0 0 #7090c4;
+          box-shadow: 4px 4px 0 0 #7090c4;
   background: white;
   margin: 8px;
   padding: 16px;
@@ -54,7 +35,8 @@ body {
   margin-bottom: 16px;
   -o-object-fit: cover;
      object-fit: cover;
-  margin-top: 16px;
+  border-radius: 8px;
+  margin-bottom: -10px;
 }
 
 .topbar h1 {
@@ -66,13 +48,12 @@ body {
 }
 
 .mainpanel {
-  background: #FFC3C3;
-  border: 4px solid #f78f8f;
-  border-radius: 16px;
-  -webkit-box-shadow: 4px 4px 0 0 #570A57;
-          box-shadow: 4px 4px 0 0 #570A57;
+  background: #758ddb79;
+  border: 0;
+  border-radius: 15px;
   margin: 8px;
   padding: 16px;
+  color: white;
 }
 
 .mainpanel .formy {
@@ -82,13 +63,57 @@ body {
   font-weight: bold;
 }
 
+select{
+  border-width: 1px;
+  border-color: white;
+  border-radius: 5px;
+  border-width: 0px 0px 2px 0px;
+  padding: 2px;
+  outline: none;
+  transition-duration: 0.5;
+}
+select:hover{
+  cursor: pointer;
+
+}
+select:focus{
+  border-color: #649df2;
+  box-shadow: rgba(19, 38, 84, 0.767) 0 0 7px;
+}
+
 input[name=Submit]{
   border: 0;
   border-radius: 5px;
-  background-color: #faf0d7;
-  height: 23px;
+  background-color: #f5e6bf;
+  height: 25px;
+  cursor: pointer;
 }
 
+input[name=search]{
+  outline: none;
+  border-width: 0px 0px 3px 0px;
+  border-color: white;
+  border-radius: 5px;
+  padding: 3px;
+  padding-left: 5px;
+  transition-duration: 0.5s;
+  width: 160px;
+}
+input[name=search]:hover{
+  box-shadow: rgba(19, 38, 84, 0.767) 0 0 7px;
+}
+input[name=search]:focus{
+  border-color: #649df2;
+  width: 250px;
+}
+::-webkit-scrollbar{
+  background-color: transparent;
+  width: 10px;
+}
+::-webkit-scrollbar-thumb{
+  background-color: rgba(138, 170, 195, 0.366);
+  border-radius: 30px;
+}
 @media screen and (max-height: 719px) {
   .topbar img {
     display: none;
@@ -98,17 +123,18 @@ input[name=Submit]{
 .box{
   width: 60%;
   text-align: left;
-  box-shadow: rgba(131, 131, 131, 0.532) 0 0 10px;
+  box-shadow: rgba(93, 101, 151, 0.532) 0 0 10px;
             border-radius: 15px;
             width: 90%;
             display: inline-block;
+            color: rgba(255, 255, 255, 0.755);
 }
 .img{
   display: inline-block;
-  float: left;
   padding-top: 40px;
   padding-left: 60px;
   padding-bottom: 40px;
+  float: left;
   width: 20%;
 }
 .img img{
